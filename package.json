@@ -1,5 +1,5 @@
 {
-  "name": "adoato",
+  "name": "sammael_improbable",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.4",
+    "@react-spring/three": "^9.7.2",
+    "@react-three/drei": "^9.65.3",
+    "@react-three/fiber": "^8.12.1",
+    "gsap": "^3.11.5",
+    "leva": "^0.9.34",
+    "next": "13.3.0",
+    "r3f-perf": "^7.1.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.151.3"
+  },
+  "devDependencies": {
+    "raw-loader": "^4.0.2",
+    "url-loader": "^4.1.1"
   }
 }
