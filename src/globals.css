@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:ital,wght@0,300;0,500;1,300;1,500&family=Space+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  /* background: black; */
+  font-size: 13px;
+  line-height: 1.5;
+  color: white;
+  font-family: 'Space Mono', monospace;
+}
+
+canvas {
+  /* border: 1px solid red; */
+  /* position: fixed; */
+  /* inset: 0; */
+  /* width: 100%; */
+}
+
+main {
+  position: fixed;
+  inset: 0;
+}
+
+.progress-overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  padding-top: 50vh;
+  padding-bottom: 50vh;
+  padding-left: 40vw;
+  padding-right: 40vw;
+  transition: opacity ease-in-out 300ms;
+  pointer-events: none;
+  position: fixed;
+  transition-delay: 500ms;
+
+}
+.progress {
+  width: 0;
+  background-color: #ffb14c;
+  height: 3px;
+  border-radius: 2px;
+  transition: width ease-in-out 300ms;
+}
+
+.progress-overlay.in-progress {
+  opacity: 1;
+}
+.progress-overlay.loaded {
+  opacity: 0;
+  /* padding-left: 45vw; */
+  /* padding-right: 45vw; */
+}
