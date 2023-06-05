@@ -6,8 +6,19 @@ export default function VideoPage () {
   const videoRef = useRef()
 
   useEffect(() => {
-    console.log(videoRef.current)
-    videoRef.current.play()
+    const video = videoRef.current
+    var promise = video.play();
+
+    if (promise !== undefined) {
+      promise.then(_ => {
+        // Autoplay started
+      }).catch(error => {
+        // Autoplay not allowed
+        // Mute video and try to play again
+        video.muted = true;
+        video.play();
+      });
+    }
   })
 
   return (
