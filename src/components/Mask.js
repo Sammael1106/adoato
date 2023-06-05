@@ -15,15 +15,12 @@ export default function Mask(props) {
   const scroll = useScroll()
   const maskRef = useRef()
   const [hovered, setHover] = useState(false)
-  const [clicked, setClicked] = useState(false)
   useCursor(hovered)
 
-  useEffect(() => {
+  function click() {
     const scrollElement = document.getElementsByTagName('canvas')[0].nextSibling
-    if (clicked) {
-      scrollElement.scrollTo({ top: 2000, left: 0, behavior: 'smooth' })
-    }
-  })
+    scrollElement.scrollTo({ top: 2000, left: 0, behavior: 'smooth' })
+  }
 
   useFrame(() => {
     if (scroll) {
@@ -63,7 +60,7 @@ export default function Mask(props) {
         rotation={[Math.PI / 2, 0, 0]}
         onPointerOver={() => setHover(true)}
         onPointerLeave={() => setHover(false)}
-        onClick={() => setClicked(true)}
+        onClick={click}
         scale={1.16}/>
     </group>
   );
