@@ -7,24 +7,17 @@ export default function VideoPage () {
 
   useEffect(() => {
     const video = videoRef.current
-    var promise = video.play();
-
-    if (promise !== undefined) {
-      promise.then(_ => {
-        // Autoplay started
-      }).catch(error => {
-        // Autoplay not allowed
-        // Mute video and try to play again
-        video.muted = true;
-        video.play();
-      });
-    }
+    video.play()
+    setTimeout(() => {
+      if (!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2))
+        video.controls = true
+    }, 100)
   })
 
   return (
     <main style={{backgroundColor: 'white', display: 'flex', alignItems: 'center'}}>
-      <video width="600" height="800" autoPlay loop muted ref={videoRef}>
-        <source src="adoato_animation_final.mp4" type="video/mp4"/>
+      <video width="600" height="800" loop muted ref={videoRef} autoPlay>
+        <source src="adoato_animation_final.mp4" type="video/mp4" />
       </video>
     </main>
   )

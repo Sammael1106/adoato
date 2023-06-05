@@ -5,7 +5,6 @@ import * as THREE from 'three';
 import { useControls } from 'leva'
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-// import { DepthOfField, EffectComposer, Bloom } from '@react-three/postprocessing'
 
 import {
   Center,
@@ -50,13 +49,6 @@ export default function Home() {
       <Canvas shadows dpr={[1, 2]}
               camera={{ position: [0, 0, 100], fov: 50, zoom: 1.8, near: 10, far: 200 }}
               >
-        {/* <EffectComposer multisampling={16}>
-          <DepthOfField
-                focusDistance={ focusDistance }
-                focalLength={ focalLength }
-                bokehScale={ bokehScale }
-            />
-        </EffectComposer> */}
         <Loader progress={progress} />
         <Suspense fallback={null}>
           <color attach="background" args={['black']} />
